@@ -21,5 +21,7 @@ typedef void(^HUDDidDismiss)();
 
 - (void)ASAKHUDDismissWithBlock:(HUDDidDismiss)dismissBlock;
 
+- (void)ASAKHUDShowWithBlock:(HUDDidShow)showBlk Withduration:(float)duration dismissWithBlock:(HUDDidDismiss)dismissBlk;
+
 
 @end

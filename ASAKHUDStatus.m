@@ -71,6 +71,15 @@
     return self;
 }
 
+- (void)ASAKHUDShowWithBlock:(HUDDidShow)showBlk Withduration:(float)duration dismissWithBlock:(HUDDidDismiss)dismissBlk{
+    
+    [self ASAKHUDShowWithBlock:showBlk];
+    [self performSelector:@selector(ASAKHUDDismissWithBlock) withObject:dismissBlk afterDelay:duration];
+    if(showBlk)
+        showBlk();
+}
+
+
 #pragma mark --
 #pragma showHUD
 - (void)ASAKHUDShowWithBlock:(HUDDidShow)showBlock{
@@ -83,7 +92,8 @@
         self.alpha = 0;
         [[[[UIApplication sharedApplication] windows] firstObject] makeKeyAndVisible];
     }];
-    dismissBlock();
+    if(dismissBlk)
+        dismissBlock();
 }
 
 

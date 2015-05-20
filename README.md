@@ -9,3 +9,5 @@ HUD的一种简单的实现
 
 
 *	###结束HUD时调用ASAKHUDDismissWithBlock:(HUDDidDismiss)dismissBlock 回调block用来完成一些任务
+
+*	###ASAKHUDShow
